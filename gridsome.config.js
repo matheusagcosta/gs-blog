@@ -11,11 +11,13 @@ module.exports = {
       use: '@gridsome/source-filesystem',
       options: {
         typeName: 'BlogPost',
-        path: './content/blog/**/*.md',
+        path: './**/*.md',
+        baseDir: 'content',
+        resolveAbsolutePaths: true
       }
     }
   ],
   templates: {
-    BlogPost: '/blog/:year/:month/:day/:slug'
+    BlogPost: '/:year/:month/:day/:slug'
   }
 }
